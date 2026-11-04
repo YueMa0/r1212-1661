@@ -5,7 +5,15 @@ authors:
   - family-names: Ma
     given-names: Yue
 version: 1.0.0
-# TODO before release: add date-released, doi and identifiers (Zenodo concept DOI and version DOI).
+date-released: "2026-11-04"
+doi: 10.5281/zenodo.23963534
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23963534
+    description: "All versions (Zenodo concept DOI)"
+  - type: doi
+    value: 10.5281/zenodo.23963535
+    description: "Version 1.0.0"
 license: MIT
 repository-code: "https://github.com/YueMa0/r1212-1661"
 abstract: "A red/blue colouring of the complete graph on 1660 vertices with no monochromatic K_12, so R(12,12) ≥ 1661. It consists of the Mathon colouring M(797) with 21 vertices removed, and 85 core vertices, each a copy of a removed vertex or constant on the rest of M(797). The removed vertices contain two antipodal pairs of M(797). Checked by two independent exhaustive computer searches and by a clone-projection argument with an antipodal rule, and proved in Lean 4 with Mathlib; the compiled proof was also accepted by leanchecker and by the independent kernel nanoda. The work was done with Claude (Claude Opus 5.5, Anthropic); see the README."

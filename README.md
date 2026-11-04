@@ -1,5 +1,7 @@
 # R(12,12) ≥ 1661
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23963534.svg)](https://doi.org/10.5281/zenodo.23963534)
+
 This repository contains a red/blue colouring of the complete graph K₁₆₆₀ with no monochromatic K₁₂, so R(12,12) ≥ 1661.
 
 To our knowledge this improves our earlier R(12,12) ≥ 1658 ([r1212-1658](https://github.com/YueMa0/r1212-1658), [doi:10.5281/zenodo.23827702](https://doi.org/10.5281/zenodo.23827702)) and the best bound published by others, R(12,12) ≥ 1641 (M. Tatarevic, [arXiv:2608.06531](https://arxiv.org/abs/2608.06531), August 2026). The literature search was last made on 4 November 2026. The result has not been peer reviewed.
@@ -119,7 +121,7 @@ It ends by printing the axioms of the main theorems; lean/audit/logs_1661/axioms
 
 ## How to cite
 
-**TODO (author): add the Zenodo DOI after the first release.** Citation metadata is in [CITATION.cff](CITATION.cff); GitHub shows it under "Cite this repository". Please cite Tatarevic's paper, r1212-1642 and r1212-1658 as well.
+Each release is archived on Zenodo. To cite all versions, use [doi:10.5281/zenodo.23963534](https://doi.org/10.5281/zenodo.23963534). Version 1.0.0 is [doi:10.5281/zenodo.23963535](https://doi.org/10.5281/zenodo.23963535). Citation metadata is in [CITATION.cff](CITATION.cff); GitHub shows it under "Cite this repository". Please cite Tatarevic's paper, r1212-1642 and r1212-1658 as well.
 
 ## License
 
