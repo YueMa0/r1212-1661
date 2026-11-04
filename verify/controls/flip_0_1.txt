@@ -1,0 +1,4 @@
+sha256 07c5cbb696c1d7662870b42e6a1c508e7ef46bf2313f01d297f914e62448867d
+PERTURBED: flipped edge 0-1 to blue
+antipodes: all 798 pairs are blue and complementary towards the other 1594 vertices
+CHECK FAILED: vertices 0..1574 are not V0 of M(797) in increasing order

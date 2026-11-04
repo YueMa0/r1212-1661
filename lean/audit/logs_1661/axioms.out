@@ -1,0 +1,28 @@
+RamseyIncrement.R1661.r1212_lower_bound : @LE.le Nat instLENat
+  (@OfNat.ofNat Nat (nat_lit 1661) (instOfNatNat (nat_lit 1661)))
+  (RamseyIncrement.ramseyNumber (@OfNat.ofNat Nat (nat_lit 12) (instOfNatNat (nat_lit 12)))
+    (@OfNat.ofNat Nat (nat_lit 12) (instOfNatNat (nat_lit 12))))
+def RamseyIncrement.ramseyNumber : ℕ → ℕ → ℕ :=
+fun k s => Nat.find ⋯
+def RamseyIncrement.ForcesRamsey : ℕ → ℕ → ℕ → Prop :=
+fun n k s => ∀ (G : SimpleGraph (Fin n)), ¬RamseyIncrement.IsRamseyFree G k s
+def RamseyIncrement.HasRamseyColoring : ℕ → ℕ → ℕ → Prop :=
+fun n k s => ∃ G, RamseyIncrement.IsRamseyFree G k s
+def RamseyIncrement.IsRamseyFree.{u_1} : {V : Type u_1} → SimpleGraph V → ℕ → ℕ → Prop :=
+fun {V} G k s => G.CliqueFree k ∧ Gᶜ.CliqueFree s
+'RamseyIncrement.R1661.r1212_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamseyIncrement.R1661.r1212_hasRamseyColoring' depends on axioms: [propext, Classical.choice, Quot.sound]
+'audit_exists_colouring_1660' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamseyIncrement.R1661.G1660_isRamseyFree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamseyIncrement.R1661.colG_cliqueFree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamseyIncrement.R1661.mathon_antip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamseyIncrement.R1661.card_W' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamseyIncrement.R1661.sigR_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamseyIncrement.R1661.antiRow_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamseyIncrement.R1661.noK12' depends on axioms: [propext]
+'RamseyIncrement.R1661.checks_ok' depends on axioms: [propext]
+'RamseyIncrement.R1661.badRow_spec' depends on axioms: [propext]
+'RamseyIncrement.R1661.cstMask_spec' depends on axioms: [propext]
+'RamseyIncrement.R1658.defect_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamseyIncrement.R1212.mathon_isRamseyFree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamseyIncrement.R1212.paley_cliqueFree' depends on axioms: [propext, Classical.choice, Quot.sound]

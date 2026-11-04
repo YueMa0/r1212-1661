@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this colouring, please cite it as below, together with Tatarevic's paper, r1212-1642 and r1212-1658."
+title: "R(12,12) ≥ 1661: a colouring of K_1660, a Lean proof and computer checks"
+authors:
+  - family-names: Ma
+    given-names: Yue
+version: 1.0.0
+# TODO before release: add date-released, doi and identifiers (Zenodo concept DOI and version DOI).
+license: MIT
+repository-code: "https://github.com/YueMa0/r1212-1661"
+abstract: "A red/blue colouring of the complete graph on 1660 vertices with no monochromatic K_12, so R(12,12) ≥ 1661. It consists of the Mathon colouring M(797) with 21 vertices removed, and 85 core vertices, each a copy of a removed vertex or constant on the rest of M(797). The removed vertices contain two antipodal pairs of M(797). Checked by two independent exhaustive computer searches and by a clone-projection argument with an antipodal rule, and proved in Lean 4 with Mathlib; the compiled proof was also accepted by leanchecker and by the independent kernel nanoda. The work was done with Claude (Claude Opus 5.5, Anthropic); see the README."
+keywords:
+  - Ramsey numbers
+  - lower bounds
+  - Lean
+references:
+  - type: article
+    authors:
+      - family-names: Tatarevic
+        given-names: Milos
+    title: "A constructive two-parameter Ramsey increment"
+    year: 2026
+    url: "https://arxiv.org/abs/2608.06531"
+  - type: software
+    authors:
+      - family-names: Ma
+        given-names: Yue
+    title: "R(12,12) ≥ 1642: a colouring of K_1641, a Lean proof and computer checks"
+    doi: 10.5281/zenodo.23770924
+    repository-code: "https://github.com/YueMa0/r1212-1642"
+  - type: software
+    authors:
+      - family-names: Ma
+        given-names: Yue
+    title: "R(12,12) ≥ 1658: a colouring of K_1657, a Lean proof and computer checks"
+    doi: 10.5281/zenodo.23827702
+    repository-code: "https://github.com/YueMa0/r1212-1658"

@@ -1,0 +1,2 @@
+n=1660 t=12 tasks=3320 threads=5 cap=0
+finished: found=0 timeout=0

@@ -1,0 +1,64 @@
+nanoda_bin sha256 2385226ebd29682dbe5fdb0d9d9911dd50b7a47c23ea295d99bd56588cdd6d42
+lean4export sha256 96bebbc97465ad9584961b8087680e729ebfb3dbd2dbb81f6a6b35b47497636d
+== [18:52:41] export the full theorem
+export rc=0 bytes= 141524100 sha256 156091db83f42ec5beb27c8878290fc9571d213b988b2a5faaf2a143560dc430
+== [18:52:48] nanoda: full theorem
+nanoda full exit=0 peak_GB=8.43
+theorem RamseyIncrement.R1661.r1212_lower_bound :
+  LE.le (OfNat.ofNat 1661) (RamseyIncrement.ramseyNumber (OfNat.ofNat 12) (OfNat.ofNat 12)) :=
+  _
+
+def RamseyIncrement.ramseyNumber (a._@._internal._hyg.0 n : Nat) : Nat := Nat.find _
+
+def RamseyIncrement.ForcesRamsey (x._@.Init.Data.Nat.Basic.3525184520._hygCtx.20.Init.Data.Nat.Basic.3525184520._hygCtx._hyg.47
+    n a._@._internal._hyg.0 :
+    Nat) :
+  Prop :=
+  forall (G :
+      SimpleGraph (Fin x._@.Init.Data.Nat.Basic.3525184520._hygCtx.20.Init.Data.Nat.Basic.3525184520._hygCtx._hyg.47)),
+  Not (RamseyIncrement.IsRamseyFree G n a._@._internal._hyg.0)
+
+def RamseyIncrement.HasRamseyColoring (x._@.Init.Data.Nat.Basic.3525184520._hygCtx.20.Init.Data.Nat.Basic.3525184520._hygCtx._hyg.47
+    n a._@._internal._hyg.0 :
+    Nat) :
+  Prop :=
+  Exists
+    (fun (G :
+        SimpleGraph
+          (Fin x._@.Init.Data.Nat.Basic.3525184520._hygCtx.20.Init.Data.Nat.Basic.3525184520._hygCtx._hyg.47)) =>
+    RamseyIncrement.IsRamseyFree G n a._@._internal._hyg.0)
+
+def RamseyIncrement.IsRamseyFree.{u_1} :
+  forall {V : Type u_1}, SimpleGraph V → Nat → Nat → Prop :=
+  fun {V : Type u_1} (G : SimpleGraph V) (k s : Nat) =>
+  And (SimpleGraph.CliqueFree G k) (SimpleGraph.CliqueFree (Compl.compl G) s)
+
+def SimpleGraph.CliqueFree.{u_1} :
+  forall {α : Type u_1}, SimpleGraph α → Nat → Prop :=
+  fun {α : Type u_1} (G : SimpleGraph α) (n : Nat) => forall (t : Finset α), Not (SimpleGraph.IsNClique G n t)
+
+inductive SimpleGraph.IsNClique.{u_1} {α : Type u_1} : SimpleGraph α → Nat → Finset α → Prop
+
+def SimpleGraph.IsClique.{u_1} :
+  forall {α : Type u_1}, SimpleGraph α → Set α → Prop :=
+  fun {α : Type u_1} (G : SimpleGraph α) (s : Set α) => Set.Pairwise s (SimpleGraph.Adj G)
+
+axiom propext {a b : Prop} : Iff a b → Eq a b
+
+axiom Quot.sound.{u} {α : Sort u} {r : α → α → Prop} {a b : α} : r a b → Eq (Quot.mk r a) (Quot.mk r b)
+
+axiom Classical.choice.{u} {α : Sort u} : Nonempty α → α
+
+Checked 29313 declarations with no errors
+      706.95 real       682.59 user        20.49 sys
+== [19:04:35] control: badRow_spec as exported, then with one bit of badRLit flipped
+lines holding badRLit: [13754]
+control as exported: exit=0 (must be 0)
+
+Checked 694 declarations with no errors
+control tampered: exit=101 (must be nonzero)
+thread 'main' (5047964) panicked at src/tc.rs:984:71:
+assertion failed: self.def_eq(u, v)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+== [19:04:45] nanoda done
+== script exit=0

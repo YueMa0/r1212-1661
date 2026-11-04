@@ -1,0 +1,581 @@
+{
+ "file": "r1212_1660.graph",
+ "n": 1660,
+ "sha256": "07c5cbb696c1d7662870b42e6a1c508e7ef46bf2313f01d297f914e62448867d",
+ "format": "n lines of n characters; character w of line v is 1 iff the edge vw is red",
+ "claim": "no red K12 and no blue K12, so R(12,12) >= 1661",
+ "mathon": "M(797) in the vertex order of r1212-1642: A_x = x, B_x = 797 + x (x in Z/797), a = 1594, b = 1595",
+ "Sigma_V": {
+  "vertices": [
+   930,
+   926,
+   1573,
+   1338,
+   1479,
+   1483,
+   1492,
+   1582,
+   1586,
+   1595,
+   1061,
+   1588,
+   1576,
+   1549,
+   1554,
+   1594,
+   1472,
+   1557,
+   1079,
+   1267,
+   675
+  ],
+  "names": [
+   "c0",
+   "c1",
+   "c2",
+   "c3",
+   "c4",
+   "c5",
+   "c6",
+   "c7",
+   "c8",
+   "c9",
+   "i0",
+   "i1",
+   "i2",
+   "i3",
+   "i4",
+   "i5",
+   "i6",
+   "i7",
+   "i8",
+   "i9",
+   "i6bar"
+  ],
+  "note": "C = c0..c9 (a red K10) and I = i0..i9 (a blue K10) are the certificates of r1212-1642; i6bar = 675 = A_675 is the antipode of i6 = 1472 = B_675"
+ },
+ "antipodal_pairs_in_Sigma_V": [
+  [
+   1594,
+   1595
+  ],
+  [
+   1472,
+   675
+  ]
+ ],
+ "V0": {
+  "file_vertices": [
+   0,
+   1574
+  ],
+  "size": 1575,
+  "rule": "file vertex v < 1575 is the v-th vertex of M(797) outside Sigma_V, in increasing order"
+ },
+ "T": {
+  "file_vertices": [
+   1575,
+   1659
+  ],
+  "size": 85,
+  "types": {
+   "copy": "to every vertex of V0 the colour of the listed vertex of Sigma_V in M(797)",
+   "constant red": "all edges to V0 are red",
+   "constant blue": "all edges to V0 are blue"
+  },
+  "note": "the colours among the 85 vertices of T are those of the file"
+ },
+ "type_counts": {
+  "constant red": 11,
+  "constant blue": 11,
+  "c0": 3,
+  "c1": 3,
+  "c2": 3,
+  "c3": 3,
+  "c4": 3,
+  "c5": 3,
+  "c6": 3,
+  "c7": 3,
+  "c8": 3,
+  "c9": 3,
+  "i0": 3,
+  "i1": 3,
+  "i2": 3,
+  "i3": 3,
+  "i4": 3,
+  "i5": 3,
+  "i6": 4,
+  "i7": 3,
+  "i8": 3,
+  "i9": 3,
+  "i6bar": 2
+ },
+ "core_vertices": [
+  {
+   "vertex": 1575,
+   "type": "copy",
+   "of": "c1",
+   "of_vertex": 926
+  },
+  {
+   "vertex": 1576,
+   "type": "copy",
+   "of": "c0",
+   "of_vertex": 930
+  },
+  {
+   "vertex": 1577,
+   "type": "copy",
+   "of": "c2",
+   "of_vertex": 1573
+  },
+  {
+   "vertex": 1578,
+   "type": "copy",
+   "of": "i5",
+   "of_vertex": 1594
+  },
+  {
+   "vertex": 1579,
+   "type": "copy",
+   "of": "i9",
+   "of_vertex": 1267
+  },
+  {
+   "vertex": 1580,
+   "type": "copy",
+   "of": "i6",
+   "of_vertex": 1472
+  },
+  {
+   "vertex": 1581,
+   "type": "copy",
+   "of": "c7",
+   "of_vertex": 1582
+  },
+  {
+   "vertex": 1582,
+   "type": "copy",
+   "of": "c4",
+   "of_vertex": 1479
+  },
+  {
+   "vertex": 1583,
+   "type": "copy",
+   "of": "c5",
+   "of_vertex": 1483
+  },
+  {
+   "vertex": 1584,
+   "type": "copy",
+   "of": "c6",
+   "of_vertex": 1492
+  },
+  {
+   "vertex": 1585,
+   "type": "copy",
+   "of": "i3",
+   "of_vertex": 1549
+  },
+  {
+   "vertex": 1586,
+   "type": "copy",
+   "of": "i4",
+   "of_vertex": 1554
+  },
+  {
+   "vertex": 1587,
+   "type": "copy",
+   "of": "i7",
+   "of_vertex": 1557
+  },
+  {
+   "vertex": 1588,
+   "type": "copy",
+   "of": "c2",
+   "of_vertex": 1573
+  },
+  {
+   "vertex": 1589,
+   "type": "copy",
+   "of": "i1",
+   "of_vertex": 1588
+  },
+  {
+   "vertex": 1590,
+   "type": "copy",
+   "of": "c1",
+   "of_vertex": 926
+  },
+  {
+   "vertex": 1591,
+   "type": "copy",
+   "of": "c8",
+   "of_vertex": 1586
+  },
+  {
+   "vertex": 1592,
+   "type": "copy",
+   "of": "i1",
+   "of_vertex": 1588
+  },
+  {
+   "vertex": 1593,
+   "type": "copy",
+   "of": "i7",
+   "of_vertex": 1557
+  },
+  {
+   "vertex": 1594,
+   "type": "copy",
+   "of": "c9",
+   "of_vertex": 1595
+  },
+  {
+   "vertex": 1595,
+   "type": "constant blue"
+  },
+  {
+   "vertex": 1596,
+   "type": "constant blue"
+  },
+  {
+   "vertex": 1597,
+   "type": "constant blue"
+  },
+  {
+   "vertex": 1598,
+   "type": "constant blue"
+  },
+  {
+   "vertex": 1599,
+   "type": "constant blue"
+  },
+  {
+   "vertex": 1600,
+   "type": "constant blue"
+  },
+  {
+   "vertex": 1601,
+   "type": "constant blue"
+  },
+  {
+   "vertex": 1602,
+   "type": "constant blue"
+  },
+  {
+   "vertex": 1603,
+   "type": "constant blue"
+  },
+  {
+   "vertex": 1604,
+   "type": "constant blue"
+  },
+  {
+   "vertex": 1605,
+   "type": "copy",
+   "of": "c7",
+   "of_vertex": 1582
+  },
+  {
+   "vertex": 1606,
+   "type": "copy",
+   "of": "c1",
+   "of_vertex": 926
+  },
+  {
+   "vertex": 1607,
+   "type": "copy",
+   "of": "c2",
+   "of_vertex": 1573
+  },
+  {
+   "vertex": 1608,
+   "type": "copy",
+   "of": "i5",
+   "of_vertex": 1594
+  },
+  {
+   "vertex": 1609,
+   "type": "copy",
+   "of": "c4",
+   "of_vertex": 1479
+  },
+  {
+   "vertex": 1610,
+   "type": "copy",
+   "of": "c9",
+   "of_vertex": 1595
+  },
+  {
+   "vertex": 1611,
+   "type": "copy",
+   "of": "c8",
+   "of_vertex": 1586
+  },
+  {
+   "vertex": 1612,
+   "type": "copy",
+   "of": "c6",
+   "of_vertex": 1492
+  },
+  {
+   "vertex": 1613,
+   "type": "copy",
+   "of": "c5",
+   "of_vertex": 1483
+  },
+  {
+   "vertex": 1614,
+   "type": "copy",
+   "of": "c7",
+   "of_vertex": 1582
+  },
+  {
+   "vertex": 1615,
+   "type": "constant red"
+  },
+  {
+   "vertex": 1616,
+   "type": "constant red"
+  },
+  {
+   "vertex": 1617,
+   "type": "constant red"
+  },
+  {
+   "vertex": 1618,
+   "type": "constant red"
+  },
+  {
+   "vertex": 1619,
+   "type": "constant red"
+  },
+  {
+   "vertex": 1620,
+   "type": "constant red"
+  },
+  {
+   "vertex": 1621,
+   "type": "constant red"
+  },
+  {
+   "vertex": 1622,
+   "type": "constant red"
+  },
+  {
+   "vertex": 1623,
+   "type": "constant red"
+  },
+  {
+   "vertex": 1624,
+   "type": "constant red"
+  },
+  {
+   "vertex": 1625,
+   "type": "constant red"
+  },
+  {
+   "vertex": 1626,
+   "type": "copy",
+   "of": "i0",
+   "of_vertex": 1061
+  },
+  {
+   "vertex": 1627,
+   "type": "copy",
+   "of": "i1",
+   "of_vertex": 1588
+  },
+  {
+   "vertex": 1628,
+   "type": "copy",
+   "of": "i2",
+   "of_vertex": 1576
+  },
+  {
+   "vertex": 1629,
+   "type": "copy",
+   "of": "i3",
+   "of_vertex": 1549
+  },
+  {
+   "vertex": 1630,
+   "type": "copy",
+   "of": "i4",
+   "of_vertex": 1554
+  },
+  {
+   "vertex": 1631,
+   "type": "copy",
+   "of": "i6bar",
+   "of_vertex": 675
+  },
+  {
+   "vertex": 1632,
+   "type": "copy",
+   "of": "i7",
+   "of_vertex": 1557
+  },
+  {
+   "vertex": 1633,
+   "type": "copy",
+   "of": "i9",
+   "of_vertex": 1267
+  },
+  {
+   "vertex": 1634,
+   "type": "copy",
+   "of": "i8",
+   "of_vertex": 1079
+  },
+  {
+   "vertex": 1635,
+   "type": "copy",
+   "of": "i2",
+   "of_vertex": 1576
+  },
+  {
+   "vertex": 1636,
+   "type": "constant blue"
+  },
+  {
+   "vertex": 1637,
+   "type": "copy",
+   "of": "c0",
+   "of_vertex": 930
+  },
+  {
+   "vertex": 1638,
+   "type": "copy",
+   "of": "i0",
+   "of_vertex": 1061
+  },
+  {
+   "vertex": 1639,
+   "type": "copy",
+   "of": "i3",
+   "of_vertex": 1549
+  },
+  {
+   "vertex": 1640,
+   "type": "copy",
+   "of": "c3",
+   "of_vertex": 1338
+  },
+  {
+   "vertex": 1641,
+   "type": "copy",
+   "of": "i0",
+   "of_vertex": 1061
+  },
+  {
+   "vertex": 1642,
+   "type": "copy",
+   "of": "c3",
+   "of_vertex": 1338
+  },
+  {
+   "vertex": 1643,
+   "type": "copy",
+   "of": "c4",
+   "of_vertex": 1479
+  },
+  {
+   "vertex": 1644,
+   "type": "copy",
+   "of": "c5",
+   "of_vertex": 1483
+  },
+  {
+   "vertex": 1645,
+   "type": "copy",
+   "of": "c6",
+   "of_vertex": 1492
+  },
+  {
+   "vertex": 1646,
+   "type": "copy",
+   "of": "i6",
+   "of_vertex": 1472
+  },
+  {
+   "vertex": 1647,
+   "type": "copy",
+   "of": "i6",
+   "of_vertex": 1472
+  },
+  {
+   "vertex": 1648,
+   "type": "copy",
+   "of": "i8",
+   "of_vertex": 1079
+  },
+  {
+   "vertex": 1649,
+   "type": "copy",
+   "of": "i6bar",
+   "of_vertex": 675
+  },
+  {
+   "vertex": 1650,
+   "type": "copy",
+   "of": "i2",
+   "of_vertex": 1576
+  },
+  {
+   "vertex": 1651,
+   "type": "copy",
+   "of": "i9",
+   "of_vertex": 1267
+  },
+  {
+   "vertex": 1652,
+   "type": "copy",
+   "of": "c8",
+   "of_vertex": 1586
+  },
+  {
+   "vertex": 1653,
+   "type": "copy",
+   "of": "i6",
+   "of_vertex": 1472
+  },
+  {
+   "vertex": 1654,
+   "type": "copy",
+   "of": "i4",
+   "of_vertex": 1554
+  },
+  {
+   "vertex": 1655,
+   "type": "copy",
+   "of": "i8",
+   "of_vertex": 1079
+  },
+  {
+   "vertex": 1656,
+   "type": "copy",
+   "of": "c3",
+   "of_vertex": 1338
+  },
+  {
+   "vertex": 1657,
+   "type": "copy",
+   "of": "i5",
+   "of_vertex": 1594
+  },
+  {
+   "vertex": 1658,
+   "type": "copy",
+   "of": "c0",
+   "of_vertex": 930
+  },
+  {
+   "vertex": 1659,
+   "type": "copy",
+   "of": "c9",
+   "of_vertex": 1595
+  }
+ ]
+}

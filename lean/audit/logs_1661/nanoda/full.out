@@ -1,0 +1,46 @@
+theorem RamseyIncrement.R1661.r1212_lower_bound :
+  LE.le (OfNat.ofNat 1661) (RamseyIncrement.ramseyNumber (OfNat.ofNat 12) (OfNat.ofNat 12)) :=
+  _
+
+def RamseyIncrement.ramseyNumber (a._@._internal._hyg.0 n : Nat) : Nat := Nat.find _
+
+def RamseyIncrement.ForcesRamsey (x._@.Init.Data.Nat.Basic.3525184520._hygCtx.20.Init.Data.Nat.Basic.3525184520._hygCtx._hyg.47
+    n a._@._internal._hyg.0 :
+    Nat) :
+  Prop :=
+  forall (G :
+      SimpleGraph (Fin x._@.Init.Data.Nat.Basic.3525184520._hygCtx.20.Init.Data.Nat.Basic.3525184520._hygCtx._hyg.47)),
+  Not (RamseyIncrement.IsRamseyFree G n a._@._internal._hyg.0)
+
+def RamseyIncrement.HasRamseyColoring (x._@.Init.Data.Nat.Basic.3525184520._hygCtx.20.Init.Data.Nat.Basic.3525184520._hygCtx._hyg.47
+    n a._@._internal._hyg.0 :
+    Nat) :
+  Prop :=
+  Exists
+    (fun (G :
+        SimpleGraph
+          (Fin x._@.Init.Data.Nat.Basic.3525184520._hygCtx.20.Init.Data.Nat.Basic.3525184520._hygCtx._hyg.47)) =>
+    RamseyIncrement.IsRamseyFree G n a._@._internal._hyg.0)
+
+def RamseyIncrement.IsRamseyFree.{u_1} :
+  forall {V : Type u_1}, SimpleGraph V → Nat → Nat → Prop :=
+  fun {V : Type u_1} (G : SimpleGraph V) (k s : Nat) =>
+  And (SimpleGraph.CliqueFree G k) (SimpleGraph.CliqueFree (Compl.compl G) s)
+
+def SimpleGraph.CliqueFree.{u_1} :
+  forall {α : Type u_1}, SimpleGraph α → Nat → Prop :=
+  fun {α : Type u_1} (G : SimpleGraph α) (n : Nat) => forall (t : Finset α), Not (SimpleGraph.IsNClique G n t)
+
+inductive SimpleGraph.IsNClique.{u_1} {α : Type u_1} : SimpleGraph α → Nat → Finset α → Prop
+
+def SimpleGraph.IsClique.{u_1} :
+  forall {α : Type u_1}, SimpleGraph α → Set α → Prop :=
+  fun {α : Type u_1} (G : SimpleGraph α) (s : Set α) => Set.Pairwise s (SimpleGraph.Adj G)
+
+axiom propext {a b : Prop} : Iff a b → Eq a b
+
+axiom Quot.sound.{u} {α : Sort u} {r : α → α → Prop} {a b : α} : r a b → Eq (Quot.mk r a) (Quot.mk r b)
+
+axiom Classical.choice.{u} {α : Sort u} : Nonempty α → α
+
+Checked 29313 declarations with no errors

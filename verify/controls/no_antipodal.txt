@@ -1,0 +1,24 @@
+sha256 07c5cbb696c1d7662870b42e6a1c508e7ef46bf2313f01d297f914e62448867d
+antipodes: all 798 pairs are blue and complementary towards the other 1594 vertices
+V0: 1575 vertices, equal to M(797) minus Sigma_V; T: 85 vertices; total 1660
+types: B:11 R:11 c0:3 c1:3 c2:3 c3:3 c4:3 c5:3 c6:3 c7:3 c8:3 c9:3 i0:3 i1:3 i2:3 i3:3 i4:3 i5:3 i6:4 i6bar:2 i7:3 i8:3 i9:3
+antipodal pairs in Sigma_V: [('i5', 'c9'), ('i6bar', 'i6')] (rule OFF: pure bound model)
+[red] largest red clique inside T: 11 (ok)
+[red] cliques checked (all, not only maximal): 342582; slack histogram {-1: 5123, 0: 223232, 1: 114227}
+[red] violations (|K| > cap(D(K))): 5123
+     [1608, 1610, 1616] D = ['c9', 'i5']
+     [1608, 1610, 1621] D = ['c9', 'i5']
+     [1608, 1610, 1622] D = ['c9', 'i5']
+     [1608, 1610, 1657] D = ['c9', 'i5']
+     [1618, 1646, 1649] D = ['i6', 'i6bar']
+[blue] largest blue clique inside T: 11 (ok)
+[blue] cliques checked (all, not only maximal): 236100; slack histogram {-1: 209, 0: 154182, 1: 81709}
+[blue] violations (|K| > cap(D(K))): 209
+     [1578, 1592, 1594, 1649] D = ['c9', 'i1', 'i5', 'i6bar']
+     [1578, 1592, 1594, 1657] D = ['c9', 'i1', 'i5']
+     [1578, 1594, 1606, 1649] D = ['c1', 'c9', 'i5', 'i6bar']
+     [1578, 1594, 1606, 1657] D = ['c1', 'c9', 'i5']
+     [1578, 1594, 1609, 1649] D = ['c4', 'c9', 'i5', 'i6bar']
+model: cap 1 + omega^M_c(D) (no antipodal rule)
+RESULT: 5332 unresolved
+CHECK: FAIL

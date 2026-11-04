@@ -1,0 +1,2 @@
+n=1660 t=12 tasks=3320 threads=8
+finished: tasks=3320 found=0

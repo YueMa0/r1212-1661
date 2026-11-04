@@ -1,0 +1,8 @@
+start 2026-11-03 17:18:50 EST
+host Apple M4 Mac mini
+graph sha256 07c5cbb696c1d7662870b42e6a1c508e7ef46bf2313f01d297f914e62448867d
+source_sha256 57e984356ce263fb83347768fa03f0aab7f38e095ea0f8fa0f915e56beeaed89
+binary_sha256 26ae190812924f55440a06b5cde654fff4cdead55f146437c0c8bfdd6ea685e1
+command nice -n 10 indep_kclique b1660_PM2.graph 12 b1660_PM2_indep.jsonl 8
+end 2026-11-03 19:33:18 EST rc=0
+check rc=0

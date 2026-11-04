@@ -1,0 +1,45 @@
+name: Quick checks of the colouring
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  quick-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install numpy networkx
+      - name: SHA-256 of the colouring
+        working-directory: graph
+        run: sha256sum --check SHA256SUMS
+      - name: Clone projection with the antipodal rule
+        run: python verify/check_antipodal_projection.py graph/r1212_1660.graph
+      - name: Output check of the recorded exhaustive search
+        run: python verify/check_bruteforce_output.py graph/r1212_1660.graph verify/results/candidate_1660.jsonl --t 12
+      - name: Output check of the recorded independent exhaustive search
+        run: python verify/independent/check_indep_output.py graph/r1212_1660.graph verify/independent/results/indep_1660.jsonl
+      - name: SHA-256 of the recorded outputs
+        run: |
+          (cd verify/results && sha256sum --check SHA256SUMS)
+          (cd verify/independent/results && sha256sum --check SHA256SUMS)
+      # The steps below do not run Lean; lean/audit/README.md says how to build the proof.
+      - name: SHA-256 of the Lean sources
+        working-directory: lean
+        run: sha256sum --check audit/sources_1661.sha256
+      - name: Data.lean is generated from the colouring
+        working-directory: lean
+        run: |
+          python gen/gen_data_1661.py ../graph/r1212_1660.graph --out "$RUNNER_TEMP/Data.lean"
+          cmp "$RUNNER_TEMP/Data.lean" RamseyIncrement/R1661/Data.lean
+      - name: The colouring defined in Lean is the published file
+        working-directory: lean
+        run: |
+          mkdir -p build/export
+          cp audit/logs_1661/rows_1661_from_lean.txt build/export/
+          python tools/compare_export_1661.py ../graph/r1212_1660.graph

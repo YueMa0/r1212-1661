@@ -1,0 +1,8 @@
+start 2026-11-03 13:16:40 EST
+host Apple M4 Mac mini
+graph sha256 07c5cbb696c1d7662870b42e6a1c508e7ef46bf2313f01d297f914e62448867d
+source_sha256 541a83313b5e78e9246953ea0f597db63db01f8f18fa2b475b795109b1056e44
+binary_sha256 11dcbe6dd843c04597cdaabd9e25951ee60598273d4a43f4b988ba5d80e1851a
+command nice -n 10 bruteforce_kclique b1660_PM2.graph 12 b1660_PM2_repo.jsonl 5
+end 2026-11-03 16:22:09 EST rc=0
+check rc=0

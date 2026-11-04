@@ -1,0 +1,7 @@
+file vertices 0..1574: M(797) on V° (M(797) minus the 21 sigma vertices)
+types: {'copy': 63, 'const red': 11, 'const blue': 11}
+antipodal sigma pairs (positions): [(9, 15), (15, 9), (16, 20), (20, 16)]
+[red] {'noClique12': True, 'noClique_calls': 1759, 'h1': True, 'h2': True, 'h3': True, 'h4': True, 'conflict_ordered_pairs': 450, 'antipodal_ordered_pairs': 34, 'constant_vertices': 11}
+[blue] {'noClique12': True, 'noClique_calls': 1238, 'h1': True, 'h2': True, 'h3': True, 'h4': True, 'conflict_ordered_pairs': 494, 'antipodal_ordered_pairs': 34, 'constant_vertices': 11}
+wrote /tmp/Data_regen.lean 124d6bde47c2bc804b42fd5dfe0b37e07be5c5fdc47be558bc6c18bdb9798f34
+CHECKS: PASS

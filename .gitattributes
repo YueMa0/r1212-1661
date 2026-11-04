@@ -1,0 +1,14 @@
+# Keep the byte hashes stable on every checkout, Windows included.
+*.py text eol=lf
+*.sh text eol=lf
+*.c text eol=lf
+*.yml text eol=lf
+*.lean text eol=lf
+*.sha256 text eol=lf
+lean/lean-toolchain text eol=lf
+lean/lake-manifest.json text eol=lf
+*.graph -text
+verify/results/** -text
+verify/independent/results/** -text
+verify/controls/** -text
+lean/audit/logs_1661/** -text

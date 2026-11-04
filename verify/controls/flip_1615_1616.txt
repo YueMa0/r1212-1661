@@ -1,0 +1,17 @@
+sha256 07c5cbb696c1d7662870b42e6a1c508e7ef46bf2313f01d297f914e62448867d
+PERTURBED: flipped edge 1615-1616 to red
+antipodes: all 798 pairs are blue and complementary towards the other 1594 vertices
+V0: 1575 vertices, equal to M(797) minus Sigma_V; T: 85 vertices; total 1660
+types: B:11 R:11 c0:3 c1:3 c2:3 c3:3 c4:3 c5:3 c6:3 c7:3 c8:3 c9:3 i0:3 i1:3 i2:3 i3:3 i4:3 i5:3 i6:4 i6bar:2 i7:3 i8:3 i9:3
+antipodal pairs in Sigma_V: [('i5', 'c9'), ('i6bar', 'i6')] (rule ON)
+[red] largest red clique inside T: 11 (ok)
+[red] cliques checked (all, not only maximal): 342584; slack histogram {-1: 2, 0: 221241, 1: 114338, 2: 496, 3: 1282, 4: 1969, 5: 1819, 6: 1013, 7: 342, 8: 76, 9: 6}
+[red] violations (|K| > cap(D(K))): 2
+     [1615, 1616] D = []
+     [1615, 1616, 1646] D = ['i6']
+[blue] largest blue clique inside T: 11 (ok)
+[blue] cliques checked (all, not only maximal): 236100; slack histogram {0: 144299, 1: 81830, 2: 723, 3: 1938, 4: 2867, 5: 2498, 6: 1331, 7: 474, 8: 129, 9: 11}
+[blue] violations (|K| > cap(D(K))): 0
+model: cap 1 + omega^M_c(D), 11 if D contains an antipodal pair
+RESULT: 2 unresolved
+CHECK: FAIL

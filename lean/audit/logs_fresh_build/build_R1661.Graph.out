@@ -1,0 +1,20 @@
+⚠ [2859/2865] Replayed RamseyIncrement.R1212.Search
+warning: RamseyIncrement/R1212/Search.lean:78:8: This simp argument is unused:
+  Nat.testBit_two_pow
+
+Hint: Omit it from the simp argument list.
+  simp ̵[̵N̵a̵t̵.̵t̵e̵s̵t̵B̵i̵t̵_̵t̵w̵o̵_̵p̵o̵w̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: RamseyIncrement/R1212/Search.lean:81:8: This simp argument is unused:
+  Nat.testBit_two_pow
+
+Hint: Omit it from the simp argument list.
+  simp [N̵a̵t̵.̵t̵e̵s̵t̵B̵i̵t̵_̵t̵w̵o̵_̵p̵o̵w̵,̵ ̵h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [2862/2865] Built RamseyIncrement.Basic (1.4s)
+✔ [2863/2865] Built RamseyIncrement.R1212.Paley (6.4s)
+✔ [2864/2865] Built RamseyIncrement.R1212.Mathon (1.8s)
+✔ [2865/2865] Built RamseyIncrement.R1661.Graph (2.1s)
+Build completed successfully (2865 jobs).

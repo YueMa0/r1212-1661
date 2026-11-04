@@ -1,0 +1,8 @@
+file vertices 0..1574: M(797) on V° (M(797) minus the 21 sigma vertices)
+types: {'copy': 63, 'const red': 11, 'const blue': 11}
+antipodal sigma pairs (positions): [(9, 15), (15, 9), (16, 20), (20, 16)]
+NO-ANTI: antipodal pairs not removed (NEGATIVE CONTROL)
+[red] {'noClique12': True, 'noClique_calls': 1759, 'h1': True, 'h2': False, 'h3': False, 'h4': False, 'conflict_ordered_pairs': 462, 'antipodal_ordered_pairs': 0, 'constant_vertices': 11}
+[blue] {'noClique12': True, 'noClique_calls': 1238, 'h1': True, 'h2': True, 'h3': True, 'h4': False, 'conflict_ordered_pairs': 494, 'antipodal_ordered_pairs': 0, 'constant_vertices': 11}
+wrote /tmp/Data_noanti.lean 91552f2992ed8cf0c46529330722e418b486cd144e5e88d738a1a5b7541479de
+CHECKS: FAIL

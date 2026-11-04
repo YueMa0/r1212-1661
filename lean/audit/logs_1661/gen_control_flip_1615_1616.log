@@ -1,0 +1,8 @@
+FLIPPED 1615-1616: now red
+file vertices 0..1574: M(797) on V° (M(797) minus the 21 sigma vertices)
+types: {'copy': 63, 'const red': 11, 'const blue': 11}
+antipodal sigma pairs (positions): [(9, 15), (15, 9), (16, 20), (20, 16)]
+[red] {'noClique12': True, 'noClique_calls': 1759, 'h1': False, 'h2': True, 'h3': True, 'h4': True, 'conflict_ordered_pairs': 450, 'antipodal_ordered_pairs': 34, 'constant_vertices': 11}
+[blue] {'noClique12': True, 'noClique_calls': 1082, 'h1': True, 'h2': True, 'h3': True, 'h4': True, 'conflict_ordered_pairs': 494, 'antipodal_ordered_pairs': 34, 'constant_vertices': 11}
+wrote /tmp/Data_flip.lean 7599bee463c8d80b2bf517110afb80704dcc3272049c78afb54202ac0066745a
+CHECKS: FAIL

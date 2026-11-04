@@ -1,0 +1,5 @@
+graph b1660_PM2.graph: n = 1660, text sha256 07c5cbb696c1d7662870b42e6a1c508e7ef46bf2313f01d297f914e62448867d
+tasks expected 3320, recorded 3320; results {'none': 3320}
+nodes 223633943462; cpu 15.46 h; longest task 170.271 s (v = 10, c = 1, m = 834)
+RESULT: no monochromatic K12 (every task "none", all 3320 tasks present)
+CHECK: PASS

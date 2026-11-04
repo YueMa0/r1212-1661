@@ -1,0 +1,59 @@
+info: mathlib: cloning https://github.com/leanprover-community/mathlib4
+info: mathlib: checking out revision '520045ab14e26149ee970e2e617ca04b09bde5d6'
+info: plausible: cloning https://github.com/leanprover-community/plausible
+info: plausible: checking out revision 'e12c1910fe855cbfc38803cd4e55543906d5fa62'
+info: LeanSearchClient: cloning https://github.com/leanprover-community/LeanSearchClient
+info: LeanSearchClient: checking out revision 'c5d5b8fe6e5158def25cd28eb94e4141ad97c843'
+info: importGraph: cloning https://github.com/leanprover-community/import-graph
+info: importGraph: checking out revision '7e9612bf0b9ee66db3cb5b9988a35afc706f5a12'
+info: proofwidgets: cloning https://github.com/leanprover-community/ProofWidgets4
+info: proofwidgets: checking out revision '6e311e2a844da9b2cc3971187df2fe0066947b93'
+info: aesop: cloning https://github.com/leanprover-community/aesop
+info: aesop: checking out revision 'a7dbf0c63b694e47f425f3dcddbc0e178bb432d3'
+info: Qq: cloning https://github.com/leanprover-community/quote4
+info: Qq: checking out revision '38d591e778f100aec9762bb582f9c7f55f50e9dc'
+info: batteries: cloning https://github.com/leanprover-community/batteries
+info: batteries: checking out revision '023ce7d62a0531e22a5331e20b587817a80d49ff'
+info: Cli: cloning https://github.com/leanprover/lean4-cli
+info: Cli: checking out revision '88679d088c9720c27ebdf2ba4dafe17341747f94'
+✔ [3/27] Built Cache.Cli (260ms)
+✔ [6/27] Built Cache.Lean (285ms)
+✔ [7/27] Built Cache.Infra (203ms)
+✔ [8/27] Built Batteries.Tactic.OpenPrivate (446ms)
+✔ [9/27] Built Cache.IO (640ms)
+✔ [10/27] Built Cache.Cli:c.o (1.0s)
+✔ [11/27] Built Cache.Lean:c.o (1.0s)
+✔ [12/27] Built Cache.Infra:c.o (943ms)
+✔ [13/27] Built Cache.Hashing (417ms)
+✔ [14/27] Built Batteries.Tactic.OpenPrivate:c.o (1.1s)
+✔ [15/27] Built Cache.IO:c.o (605ms)
+✔ [16/27] Built Cache.Hashing:c.o (177ms)
+✔ [17/27] Built Cache.Requests (799ms)
+✔ [18/27] Built Cache.Marker (292ms)
+✔ [19/27] Built Cache.Marker:c.o (59ms)
+✔ [20/27] Built Cache.Query (338ms)
+✔ [21/27] Built Cache.Query:c.o (128ms)
+✔ [22/27] Built Cache.Warning (334ms)
+✔ [23/27] Built Cache.Requests:c.o (1.0s)
+✔ [24/27] Built Cache.Warning:c.o (109ms)
+✔ [25/27] Built Cache.Main (706ms)
+✔ [26/27] Built Cache.Main:c.o (348ms)
+✔ [27/27] Built cache:exe (1.4s)
+       70.70 real        51.45 user        32.72 sys
+           841318400  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              699559  page reclaims
+               54725  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                 251  messages sent
+               26959  messages received
+                   0  signals received
+              142937  voluntary context switches
+              737847  involuntary context switches
+         12717980160  instructions retired
+          5252905206  cycles elapsed
+           273422376  peak memory footprint
