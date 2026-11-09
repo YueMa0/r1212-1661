@@ -1,0 +1,24 @@
+date      2026-11-09 04:58:34 EST
+machine   Apple M4 Mac mini, macOS 26.4.1 (Darwin arm64)
+compiler  Apple clang version 21.0.0 (clang-2100.0.123.102)
+python    python3 in the commands below is Python 3.14.10 with numpy 2.4.4
+graph     sha256 07c5cbb696c1d7662870b42e6a1c508e7ef46bf2313f01d297f914e62448867d  graph/r1212_1660.graph
+json      sha256 43e29f4a7496c6c6741a654c093369237976b37357b57cba35eca6db80d9af30  graph/r1212_1660.json
+source    sha256 3efec523fa7f2e6997a982382d82101967c71454b41e9e837f66a0ebae1dc54d  verify/crosscheck/checker_a/exact_check_general.py
+source    sha256 82511b3531e923e32706bb1f4385be7fe5e5d4c244ecbe040a7f2edf8c550d44  verify/crosscheck/checker_a/ecg.c
+source    sha256 3ef4fdf53818e17ec9b3bb13eb51024a226680759a52d8797e8edf6f6b5f31f7  verify/crosscheck/checker_b/xcheck.c
+source    sha256 2a1aa541eb64370a777de29191ba4222685ad9eea3dbb1f326b7aec79ed8170f  verify/crosscheck/checker_b/mlib.h
+source    sha256 0a09cffe9cc7bbc0f2010552235860ad60fe2cc3300de3769a2233771521e5e4  verify/crosscheck/checker_b/types_from_json.py
+
+build: cc -O3 -shared -fPIC -o libecg.so verify/crosscheck/checker_a/ecg.c
+build: cc -O3 -o xcheck verify/crosscheck/checker_b/xcheck.c
+
+a_bound_anti.txt                   rc=0    1.4 s  python3 verify/crosscheck/checker_a/exact_check_general.py graph/r1212_1660.graph graph/r1212_1660.json --bound-anti
+a_bound_plain.txt                  rc=1    0.8 s  python3 verify/crosscheck/checker_a/exact_check_general.py graph/r1212_1660.graph graph/r1212_1660.json --bound
+a_exact.txt                        rc=0    1.8 s  python3 verify/crosscheck/checker_a/exact_check_general.py graph/r1212_1660.graph graph/r1212_1660.json
+a_exact_flip_1615_1616.txt         rc=1    1.8 s  python3 verify/crosscheck/checker_a/exact_check_general.py graph/r1212_1660.graph graph/r1212_1660.json --flip 1615:1616
+a_bound_anti_flip_1615_1616.txt    rc=1    0.9 s  python3 verify/crosscheck/checker_a/exact_check_general.py graph/r1212_1660.graph graph/r1212_1660.json --bound-anti --flip 1615:1616
+types: python3 verify/crosscheck/checker_b/types_from_json.py graph/r1212_1660.json > r1212_1660.types  (sha256 d03333e2bc22751ced009aa011f587005b39785e034f1047f6e3b11e8b6e9445)
+b_exact.txt                        rc=0    1.8 s  ./xcheck graph/r1212_1660.graph r1212_1660.types
+
+end       2026-11-09 04:58:43 EST

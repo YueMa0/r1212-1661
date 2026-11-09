@@ -7,13 +7,15 @@ All commands are run from lean/.
 | build_r1661.sh | fetch the Mathlib cache, build the eight H01Branch modules and the five new modules one at a time, build the default target, print the axioms |
 | leanchecker_r1661.sh | leanchecker replay of all 25 modules, one per run, plus a control |
 | run_nanoda_1661.sh | the check with nanoda, an independent kernel, and its control |
+| portable.sh | helpers that the three scripts share: SHA-256 and peak memory on each system |
 | sources_1661.sha256 | SHA-256 of the Lean sources, entry points, helper scripts and build files in lean/ |
 | logs_1661/ | the records of our runs |
 | logs_fresh_build/ | the records of a second build, from scratch |
+| logs_local/ | where new runs of the scripts write their logs (set LOG to change it); git ignores it |
 
 The default target, RamseyIncrement.lean, imports only RamseyIncrement.R1661.Main. So `lake build` compiles the 25 modules that the theorem needs: the 5 new modules in RamseyIncrement/R1661/, RamseyIncrement/R1658/Defect.lean from r1212-1658, and 19 modules of r1212-1642 v1.0.0, all unchanged (see UPSTREAM.md at the top of the repository).
 
-The scripts use `/usr/bin/time -l` and `shasum`, as on macOS.
+The scripts need bash 3.2 or later and run on macOS and Linux. portable.sh holds what differs between these systems: the SHA-256 program, and /usr/bin/time for the peak memory of each step (BSD time -l on macOS, GNU time -v on Linux; without it the scripts still run and record n/a). Our runs were made on macOS with the scripts of version 1.0.0, which called `/usr/bin/time -l` and `shasum` directly and wrote into logs_1661/; the scripts now write into logs_local/, so that the records below stay as they are.
 
 ## What Lean checks, and what it does not
 
@@ -44,7 +46,7 @@ python3 tools/compare_export_1661.py ../graph/r1212_1660.graph
 | Step | Peak memory |
 |---|---|
 | each H01Branch module, to compile or replay | 4–7 GB |
-| R1661.Checks: compile / replay | 6.0 GB / 6.3 GB |
+| R1661.Checks: compile / replay | 6.0–6.6 GB / 6.3 GB |
 | nanoda, complete check | 8.4 GB |
 
 Lake compiles independent modules in parallel, and leanchecker replays the modules it is given in parallel, so the scripts take the large modules one at a time.
@@ -59,12 +61,12 @@ The logs are as the runs wrote them, except that in gen_regen.log, gen_control_\
 
 | Log | Contents |
 |---|---|
-| build_R1661.\*.out/.err, build_default.\* | the five new modules, compiled one at a time: Data 5 s and 1.2 GB, Checks 78 s and 6.0 GB, Graph 11 s and 2.9 GB, Projection 4 s and 2.6 GB, Main 4 s and 2.7 GB; no errors, no warnings |
+| build_R1661.\*.out/.err, build_default.\* | the five new modules, compiled one at a time: Data 5 s and 1.2 GB, Checks 78 s and 6.0 GB, Graph 11 s and 2.9 GB, Projection 4 s and 2.6 GB, Main 4 s and 2.7 GB; no errors. The only warnings are the linter warnings of the unchanged modules Cone and R1212.Search, which lake repeats when it replays them (see below) |
 | axioms.out | output of AxiomAudit1661.lean: the final theorem depends only on propext, Classical.choice and Quot.sound; `noK12`, `checks_ok`, `badRow_spec` and `cstMask_spec` only on propext. It also prints the statement with all implicit arguments, the definitions it uses, and a restatement in Mathlib's terms (a graph on Fin 1660 such that neither it nor its complement contains a 12-clique) |
-| leanchecker_with_sha.tsv, leanchecker_run.log | leanchecker replay of the 25 modules, one per run: all exit 0, with time, peak memory and the SHA-256 of each .olean. The control, a module that does not exist, is rejected |
+| leanchecker_with_sha.tsv, leanchecker_run.log | leanchecker replay of the 25 modules, one per run: all exit 0, with time, peak memory and the SHA-256 of each .olean. The control, a module that does not exist, is rejected. In our run the script had a wrong path to the .olean files, so their SHA-256 were computed after the replay, from the same files (they were last written before the replay began); the script has been corrected, and now writes them into leanchecker.tsv |
 | olean_vs_published.tsv | for each .olean: same as our build of r1212-1658 on this machine, and whether it equals the hash recorded for the Windows build in r1212-1658 |
 | compare_export_1661.json | output of tools/compare_export_1661.py: all 2,755,600 entries rebuilt from Data.lean equal the file, and so do the 85 rows that Lean's interpreter evaluated |
-| rows_1661_from_lean.txt, export.log, export.err | the 85 core rows written by Export1661.lean (1191 s, 2.7 GB) |
+| rows_1661_from_lean.txt, export.log, export.err | the 85 core rows written by Export1661.lean, run with `lake env lean Export1661.lean` (1191 s, 2.7 GB) |
 | gen_\*.log, gen_summary.json | regeneration of Data.lean (identical to the file in RamseyIncrement/R1661/) and the Python preliminary check, with two negative controls: without the antipodal rule, and with the edge 1615–1616 flipped |
 | nanoda/ | the check with nanoda, below |
 
@@ -72,10 +74,11 @@ The logs are as the runs wrote them, except that in gen_regen.log, gen_control_\
 
 On 4 November 2026 we copied lean/ of this repository into an empty directory, without any build output, and ran `bash audit/build_r1661.sh` there, on the same Apple M4 Mac mini. build_fresh.log is its output; the other files are the logs the script wrote.
 
-- Every step exited 0. The whole build took 14.5 minutes: 71 s to download the Mathlib cache, 72–114 s for each H01Branch module (at most 6.6 GB), and 38 s and 6.6 GB for R1661.Checks.
+- Every step exited 0. The whole build took 14.5 minutes: 71 s for `lake exe cache get`, which found the Mathlib cache already on the computer and only decompressed it (cache_get.out), 72–114 s for each H01Branch module (at most 6.6 GB), and 38 s and 6.6 GB for R1661.Checks. On a computer without the cache, downloading it takes longer.
 - axioms.out is byte-identical to logs_1661/axioms.out.
 - 23 of the 25 .olean files are byte-identical to those of our first build (olean_vs_audited.tsv), including all five modules of R1661/. The other two, Cone and R1212.Search, differ by 8 bytes each; their sources are unchanged, and leanchecker accepts both (leanchecker_\*.out).
-- Compiling R1212/Search.lean prints linter warnings that two simp arguments are unused. They are warnings, not errors, and the file is unchanged from r1212-1642.
+- Compiling R1212/Search.lean and Cone.lean prints linter warnings: two simp arguments are unused, and `simp at` is suggested instead of `simpa using`. They are warnings, not errors, and both files are unchanged from r1212-1642.
+- olean_vs_published.tsv, olean_vs_audited.tsv and leanchecker_\*.out come from hash comparisons and single leanchecker runs made by hand, not from the scripts.
 
 ## nanoda
 

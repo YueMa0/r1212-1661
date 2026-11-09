@@ -1,0 +1,25 @@
+graph graph/r1212_1660.graph sha256 07c5cbb696c1d7662870b42e6a1c508e7ef46bf2313f01d297f914e62448867d
+Sigma_V: [930, 926, 1573, 1338, 1479, 1483, 1492, 1582, 1586, 1595, 1061, 1588, 1576, 1549, 1554, 1594, 1472, 1557, 1079, 1267, 675]
+antipodal pairs inside Sigma_V: [[1595, 1594], [1472, 675]]
+V0: 1575 vertices, all V0-V0 edges equal M(797)
+T: 85 vertices; total 1660 = 1575 + 85; type counts {'930': 3, '926': 3, '1573': 3, '1338': 3, '1479': 3, '1483': 3, '1492': 3, '1582': 3, '1586': 3, '1595': 3, '1061': 3, '1588': 3, '1576': 3, '1549': 3, '1554': 3, '1594': 3, '1472': 4, '1557': 3, '1079': 3, '1267': 3, '675': 2, 'R': 11, 'B': 11}
+[red] largest red clique inside T: 11 (ok)
+[red] cliques checked (all, not only maximal): 342582; by size {1: 74, 2: 1199, 3: 7679, 4: 27822, 5: 62074, 6: 88361, 7: 81881, 8: 49573, 9: 19140, 10: 4338, 11: 441}
+[red] slack 11-|K|-cap histogram: {-1: 5123, 0: 223232, 1: 114227}
+[red] violations: 5123
+    K = file vertices [1608, 1610, 1616] types ['1594', '1595', 'R'], cap 9
+    K = file vertices [1608, 1610, 1621] types ['1594', '1595', 'R'], cap 9
+    K = file vertices [1608, 1610, 1622] types ['1594', '1595', 'R'], cap 9
+    K = file vertices [1618, 1646, 1649] types ['R', '1472', '675'], cap 9
+    K = file vertices [1619, 1647, 1649] types ['R', '1472', '675'], cap 9
+[blue] largest blue clique inside T: 11 (ok)
+[blue] cliques checked (all, not only maximal): 236100; by size {1: 74, 2: 1104, 3: 6211, 4: 20659, 5: 43998, 6: 61134, 7: 55703, 8: 32742, 9: 11873, 10: 2399, 11: 203}
+[blue] slack 11-|K|-cap histogram: {-1: 209, 0: 154182, 1: 81709}
+[blue] violations: 209
+    K = file vertices [1610, 1631, 1633, 1646] types ['1595', '675', '1267', '1472'], cap 8
+    K = file vertices [1614, 1631, 1633, 1646] types ['1582', '675', '1267', '1472'], cap 8
+    K = file vertices [1578, 1592, 1594, 1649] types ['1594', '1588', '1595', '675'], cap 8
+    K = file vertices [1580, 1592, 1594, 1649] types ['1472', '1588', '1595', '675'], cap 8
+    K = file vertices [1578, 1594, 1606, 1649] types ['1594', '1595', '926', '675'], cap 8
+model: bound 10 - omega^M_c(D)
+CHECK: FAIL (5332)

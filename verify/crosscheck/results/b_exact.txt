@@ -1,0 +1,6 @@
+n=1660 |V0|=1575 |Sigma|=21 |T|=85  |T|-|Sigma|=64
+V0-V0 mismatches 0, T-V0 type mismatches 0
+red: cliques in T 1308227, distinct type sets 22840, max |K| 11, max |K| with opposite constant 11
+blue: cliques in T 1042026, distinct type sets 15452, max |K| 11, max |K| with opposite constant 11
+opposite-constant violations 0, capacity violations 0, tight type sets 26265
+PASS

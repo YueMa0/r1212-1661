@@ -1,0 +1,22 @@
+graph graph/r1212_1660.graph sha256 07c5cbb696c1d7662870b42e6a1c508e7ef46bf2313f01d297f914e62448867d
+PERTURBED: flipped 1615-1616 to red
+Sigma_V: [930, 926, 1573, 1338, 1479, 1483, 1492, 1582, 1586, 1595, 1061, 1588, 1576, 1549, 1554, 1594, 1472, 1557, 1079, 1267, 675]
+antipodal pairs inside Sigma_V: [[1595, 1594], [1472, 675]]
+V0: 1575 vertices, all V0-V0 edges equal M(797)
+T: 85 vertices; total 1660 = 1575 + 85; type counts {'930': 3, '926': 3, '1573': 3, '1338': 3, '1479': 3, '1483': 3, '1492': 3, '1582': 3, '1586': 3, '1595': 3, '1061': 3, '1588': 3, '1576': 3, '1549': 3, '1554': 3, '1594': 3, '1472': 4, '1557': 3, '1079': 3, '1267': 3, '675': 2, 'R': 11, 'B': 11}
+[red] largest red clique inside T: 11 (ok)
+[red] cliques checked (all, not only maximal): 342584; by size {1: 74, 2: 1200, 3: 7680, 4: 27822, 5: 62074, 6: 88361, 7: 81881, 8: 49573, 9: 19140, 10: 4338, 11: 441}
+[red] slack 11-|K|-cap histogram: {-1: 2, 0: 221241, 1: 114338, 2: 496, 3: 1282, 4: 1969, 5: 1819, 6: 1013, 7: 342, 8: 76, 9: 6}
+[red] violations: 2
+[red] distinct D among violations: 2
+    D = []: bound 10, exact 10, bound-exact 0, violating cliques 1, max |K| 2, exact ok: False
+    D = [1472]: bound 9, exact 9, bound-exact 0, violating cliques 1, max |K| 3, exact ok: False
+[red] all 2 D: exact ok for every violating clique: False; bound-exact histogram {0: 2}
+    K = file vertices [1615, 1616] types ['R', 'R'], cap 10
+    K = file vertices [1615, 1616, 1646] types ['R', 'R', '1472'], cap 9
+[blue] largest blue clique inside T: 11 (ok)
+[blue] cliques checked (all, not only maximal): 236100; by size {1: 74, 2: 1104, 3: 6211, 4: 20659, 5: 43998, 6: 61134, 7: 55703, 8: 32742, 9: 11873, 10: 2399, 11: 203}
+[blue] slack 11-|K|-cap histogram: {0: 144299, 1: 81830, 2: 723, 3: 1938, 4: 2867, 5: 2498, 6: 1331, 7: 474, 8: 129, 9: 11}
+[blue] violations: 0
+model: bound 10 - omega^M_c(D), 0 on antipodal pairs
+CHECK: FAIL (2)

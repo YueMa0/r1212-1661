@@ -1,6 +1,13 @@
 # Files from other repositories
 
-lean/ contains the modules that the theorem needs from r1212-1642 and r1212-1658 and, through r1212-1642, from Tatarevic's repository. They are copied unchanged.
+lean/ contains the modules that the theorem needs from r1212-1642 and r1212-1658 and, through r1212-1642, from Tatarevic's repository. They are copied unchanged, and so are two programs in verify/.
+
+## verify/
+
+- verify/bruteforce_kclique.c, the exhaustive search program, from [r1212-1642](https://github.com/YueMa0/r1212-1642) v1.0.0 (commit 95e1deeb9c69d5ca83de2aab3d2027e36a7177d0); r1212-1658 has the same file.
+- verify/check_bruteforce_output.py, its output checker, from [r1212-1658](https://github.com/YueMa0/r1212-1658) (commit 0e999b5cd3648534d5adf067df78086b2f219148).
+
+## lean/
 
 From [r1212-1642](https://github.com/YueMa0/r1212-1642) v1.0.0 (commit 95e1deeb9c69d5ca83de2aab3d2027e36a7177d0), directory lean/:
 
@@ -18,6 +25,8 @@ New in this repository:
 - lean/AxiomAudit1661.lean and lean/Export1661.lean;
 - lean/RamseyIncrement/R1661/, lean/gen/, lean/tools/ and lean/audit/.
 
+## Checking
+
 To check that the copied files are unchanged:
 
 ```bash
@@ -32,6 +41,9 @@ for f in .gitignore lake-manifest.json lakefile.lean lean-toolchain \
   cmp "/tmp/r1212-1642/lean/$f" "$f"
 done
 cmp /tmp/r1212-1658/lean/RamseyIncrement/R1658/Defect.lean RamseyIncrement/R1658/Defect.lean
+cd ..
+cmp /tmp/r1212-1642/verify/bruteforce_kclique.c verify/bruteforce_kclique.c
+cmp /tmp/r1212-1658/verify/check_bruteforce_output.py verify/check_bruteforce_output.py
 ```
 
 The commands print nothing if the files are unchanged.

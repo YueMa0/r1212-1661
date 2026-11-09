@@ -4,7 +4,7 @@ These programs read graph/r1212_1660.graph.
 
 ## Quick check: clone projection with the antipodal rule
 
-check_antipodal_projection.py needs numpy and networkx, and takes a few seconds.
+check_antipodal_projection.py needs Python 3.9 or later with numpy and networkx, and takes a few seconds.
 
 ```bash
 python3 verify/check_antipodal_projection.py graph/r1212_1660.graph
@@ -12,15 +12,29 @@ python3 verify/check_antipodal_projection.py graph/r1212_1660.graph
 
 It uses two facts about M(797):
 
-- M(797) has no monochromatic K₁₁ (Mathon 1987; checked by computer in r1212-1642);
+- M(797) has no monochromatic K₁₁ (Mathon 1987, Shearer 1986; checked by computer and proved in Lean in r1212-1642). The script uses this fact; it does not check it;
 - antipodal vertices (A_x and B_x, and a and b) have opposite colours to every other vertex. The script checks this for all 798 pairs.
 
-It rebuilds M(797) from its definition and checks that vertices 0–1574 of the file are M(797) minus Σ_V, in increasing order. It reads the type of each of the 85 core vertices from the file. Then it checks every monochromatic clique inside the core, not only the maximal ones, against the bound of the clone projection, with the antipodal rule. The argument is in its docstring.
+It rebuilds M(797) from its definition and checks that vertices 0–1574 of the file are M(797) minus Σ_V, in increasing order. It reads the type of each of the 85 core vertices from the file. Then it checks every monochromatic clique inside the core that has no constant vertex of the other colour, not only the maximal ones, against the bound of the clone projection, with the antipodal rule; a clique with such a vertex cannot be extended into V°, and the script checks that the largest monochromatic clique inside the core has 11 vertices. The argument is in its docstring.
 
 - `--no-antipodal` drops the antipodal rule, as a control that must fail.
 - An argument `u:v` flips the colour of the edge uv first, as a negative control.
 
 [controls/](controls/) has the outputs of these runs; [controls/README.md](controls/README.md) lists them.
+
+## Checkers A and B
+
+[crosscheck/](crosscheck/) has two more programs for the clone model, written separately from the quick check and from each other. They check the exact criterion: for every monochromatic clique of the core, the largest clique of M(797) that extends it is computed exactly, not bounded. Checker A (Python with numpy, and a small C library) can also use the bound of the quick check, with or without the antipodal rule. Checker B (C) reads the types of the core vertices from a file that a short Python script writes from graph/r1212_1660.json. Each takes a few seconds.
+
+```bash
+cc -O3 -shared -fPIC -o libecg.so verify/crosscheck/checker_a/ecg.c
+python3 verify/crosscheck/checker_a/exact_check_general.py graph/r1212_1660.graph graph/r1212_1660.json
+cc -O3 -o xcheck verify/crosscheck/checker_b/xcheck.c
+python3 verify/crosscheck/checker_b/types_from_json.py graph/r1212_1660.json > r1212_1660.types
+./xcheck graph/r1212_1660.graph r1212_1660.types
+```
+
+Both pass. [crosscheck/README.md](crosscheck/README.md) states the criterion and the options, and lists our runs, including two controls of checker A that fail as they should; the outputs are in [crosscheck/results/](crosscheck/results/).
 
 ## Exhaustive search
 

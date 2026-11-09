@@ -1,0 +1,30 @@
+name: Lean build on Linux
+
+# Runs only when started by hand (Actions > Lean build on Linux > Run workflow).
+on: workflow_dispatch
+
+permissions:
+  contents: read
+
+jobs:
+  lean-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install elan and GNU time
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y time
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Build the proof and print the axioms
+        run: bash lean/audit/build_r1661.sh
+      - name: Replay all 25 modules with leanchecker
+        run: bash lean/audit/leanchecker_r1661.sh
+      - name: Keep the logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lean-logs
+          path: lean/audit/logs_local/

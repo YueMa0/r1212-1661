@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 # Replay all 25 modules of the proof of R(12,12) >= 1661 through leanchecker, one module per
 # run, plus a control.  leanchecker replays the modules it is given in parallel, and each
-# H01Branch module and R1661.Checks need 4-8 GB, so they are taken one at a time.
+# H01Branch module and R1661.Checks need 4-7 GB, so they are taken one at a time.
+#
+# The results go to $LOG/leanchecker.tsv, by default in audit/logs_local/ (ignored by git);
+# our record is audit/logs_1661/leanchecker_with_sha.tsv. Run audit/build_r1661.sh first.
 set -uo pipefail
 cd "$(dirname "$0")/.."
-LOG=audit/logs_1661
+. audit/portable.sh
+LOG=${LOG:-audit/logs_local}
 mkdir -p "$LOG"
 # the import closure of RamseyIncrement.R1661.Main
 # (the modules that need more than 4 GB first)
@@ -24,12 +28,11 @@ status=0
 printf 'module\texit\tseconds\tpeak_GB\tolean_sha256\n' >> "$LOG/leanchecker.tsv"
 for m in "${modules[@]}"; do
   t0=$(date +%s)
-  nice -n 10 /usr/bin/time -l lake env leanchecker "RamseyIncrement.$m" \
-    > "$LOG/lc_$m.out" 2> "$LOG/lc_$m.err"
+  run_measured "$LOG/lc_$m.out" "$LOG/lc_$m.err" lake env leanchecker "RamseyIncrement.$m"
   rc=$?
-  peak=$(awk '/maximum resident set size/ {printf "%.2f", $1 / 1073741824}' "$LOG/lc_$m.err")
-  sha=$(shasum -a 256 ".lake/build/lib/lean/RamseyIncrement/$(echo "$m" | tr . /).olean" 2>/dev/null | cut -d' ' -f1)
-  sha=${sha:-missing}
+  peak=$(peak_gb "$LOG/lc_$m.err")
+  olean=".lake/build/lib/lean/RamseyIncrement/$(echo "$m" | tr . /).olean"
+  if [ -f "$olean" ]; then sha=$(sha256 "$olean"); else sha=missing; fi
   printf '%s\t%s\t%s\t%s\t%s\n' "RamseyIncrement.$m" "$rc" "$(( $(date +%s) - t0 ))" "$peak" "$sha" \
     >> "$LOG/leanchecker.tsv"
   if [ "$rc" -eq 0 ]; then echo "ok    RamseyIncrement.$m (${peak} GB)"; else echo "FAIL  RamseyIncrement.$m"; status=1; fi

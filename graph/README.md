@@ -24,6 +24,8 @@ The **antipode** of A_x is B_x, and the antipode of a is b. Each vertex and its 
 
 C and I are the certificates of r1212-1642 and r1212-1658. Σ_V contains exactly two antipodal pairs: {a, b} = {i₅, c₉}, which r1212-1658 already has, and the new pair {i₆, ī₆}.
 
+These names count from 0, as in r1212-1642 and r1212-1658. The paper counts from 1: its c_p and i_p are c_{p−1} and i_{p−1} here, and its ī₇ is ī₆ here (see the table in the top-level README).
+
 ## Vertex order
 
 | Vertices | Role |

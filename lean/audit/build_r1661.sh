@@ -5,20 +5,24 @@
 # unchanged. From a fresh clone the script first downloads the Mathlib cache and builds the
 # eight H01Branch modules one at a time (4-7 GB each), as build_r1658.sh of r1212-1658 does.
 # (Our run started from the .lake of the r1212-1658 build, so these modules were replayed.)
-# R1661.Checks needs up to about 8 GB in the Lean kernel, so `lake build` is never asked to
-# compile two new modules at once.  Each step is timed (/usr/bin/time -l: peak memory).
+# R1661.Checks needs about 6-7 GB in the Lean kernel, so `lake build` is never asked to
+# compile two new modules at once.
+#
+# The logs go to $LOG, by default audit/logs_local/ (ignored by git); the records of our runs
+# are in audit/logs_1661/ and audit/logs_fresh_build/. Each step is timed, and its peak memory
+# is recorded where /usr/bin/time exists (see audit/portable.sh).
 set -uo pipefail
 cd "$(dirname "$0")/.."
-LOG=audit/logs_1661
+. audit/portable.sh
+LOG=${LOG:-audit/logs_local}
 mkdir -p "$LOG"
 step() {
   local name=$1; shift
   echo "== [$(date '+%F %T')] $name: $*"
   local t0=$(date +%s)
-  nice -n 10 /usr/bin/time -l "$@" > "$LOG/$name.out" 2> "$LOG/$name.err"
+  run_measured "$LOG/$name.out" "$LOG/$name.err" "$@"
   local rc=$?
-  local peak=$(awk '/maximum resident set size/ {printf "%.2f", $1 / 1073741824}' "$LOG/$name.err")
-  echo "== [$(date '+%F %T')] $name rc=$rc seconds=$(( $(date +%s) - t0 )) peak_GB=$peak"
+  echo "== [$(date '+%F %T')] $name rc=$rc seconds=$(( $(date +%s) - t0 )) peak_GB=$(peak_gb "$LOG/$name.err")"
   tail -n 5 "$LOG/$name.out"
   return $rc
 }
