@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23963534.svg)](https://doi.org/10.5281/zenodo.23963534)
 
-This repository contains a red/blue colouring of the complete graph K₁₆₆₀ with no monochromatic K₁₂, so R(12,12) ≥ 1661. It accompanies the paper *R(12,12) ≥ 1661 by extending the Mathon–Shearer coloring* by Yue Ma, which describes the construction, the proof and how the colouring was found.
+This repository contains a red/blue colouring of the complete graph K₁₆₆₀ with no monochromatic K₁₂, so R(12,12) ≥ 1661. It accompanies the paper *R(12,12) ≥ 1661 by extending the Mathon–Shearer coloring* by Yue Ma, posted on Hexagon as [hexagon:2611.00248](https://hexagonmath.org/2611.00248), which describes the construction, the proof and how the colouring was found.
 
 To our knowledge this improves our earlier R(12,12) ≥ 1658 ([r1212-1658](https://github.com/YueMa0/r1212-1658), [doi:10.5281/zenodo.23827702](https://doi.org/10.5281/zenodo.23827702)) and the best bound published by others, R(12,12) ≥ 1641 (M. Tatarevic, [arXiv:2608.06531](https://arxiv.org/abs/2608.06531), August 2026). The literature search was last made on 4 November 2026. The result has not been peer reviewed.
 
@@ -132,7 +132,7 @@ It writes its logs to lean/audit/logs_local/ and ends by printing the axioms of 
 
 ## How to cite
 
-Each release is archived on Zenodo. To cite all versions, use [doi:10.5281/zenodo.23963534](https://doi.org/10.5281/zenodo.23963534); the Zenodo page lists the DOI of each version. Version 1.0.0 is [doi:10.5281/zenodo.23963535](https://doi.org/10.5281/zenodo.23963535), and version 1.0.1 is [doi:10.5281/zenodo.24087657](https://doi.org/10.5281/zenodo.24087657). Version 1.0.1 changes documentation and the audit scripts in lean/audit/. It adds checkers A and B with the outputs of their runs (verify/crosscheck/), and one more output of a control script (verify/controls/pair_stats_no_antipodal.txt). The colouring, the outputs of the earlier runs and the proof are unchanged. Citation metadata is in [CITATION.cff](CITATION.cff); GitHub shows it under "Cite this repository". For the construction and the proof, please cite the paper; please cite Tatarevic's paper, r1212-1642 and r1212-1658 as well.
+Each release is archived on Zenodo. To cite all versions, use [doi:10.5281/zenodo.23963534](https://doi.org/10.5281/zenodo.23963534); the Zenodo page lists the DOI of each version. Version 1.0.0 is [doi:10.5281/zenodo.23963535](https://doi.org/10.5281/zenodo.23963535), and version 1.0.1 is [doi:10.5281/zenodo.24087657](https://doi.org/10.5281/zenodo.24087657). Version 1.0.1 changes documentation and the audit scripts in lean/audit/. It adds checkers A and B with the outputs of their runs (verify/crosscheck/), and one more output of a control script (verify/controls/pair_stats_no_antipodal.txt). The colouring, the outputs of the earlier runs and the proof are unchanged. Citation metadata is in [CITATION.cff](CITATION.cff); GitHub shows it under "Cite this repository". For the construction and the proof, please cite the paper, [hexagon:2611.00248](https://hexagonmath.org/2611.00248); please cite Tatarevic's paper, r1212-1642 and r1212-1658 as well.
 
 ## License
 
