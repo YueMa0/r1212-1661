@@ -4,7 +4,7 @@
 
 This repository contains a red/blue colouring of the complete graph K₁₆₆₀ with no monochromatic K₁₂, so R(12,12) ≥ 1661. It accompanies the paper *R(12,12) ≥ 1661 by extending the Mathon–Shearer coloring* by Yue Ma, posted on Hexagon as [hexagon:2611.00248](https://hexagonmath.org/2611.00248), which describes the construction, the proof and how the colouring was found.
 
-To our knowledge this improves our earlier R(12,12) ≥ 1658 ([r1212-1658](https://github.com/YueMa0/r1212-1658), [doi:10.5281/zenodo.23827702](https://doi.org/10.5281/zenodo.23827702)) and the best bound published by others, R(12,12) ≥ 1641 (M. Tatarevic, [arXiv:2608.06531](https://arxiv.org/abs/2608.06531), August 2026). The literature search was last made on 4 November 2026. The result has not been peer reviewed.
+To our knowledge this improves our earlier R(12,12) ≥ 1658 ([r1212-1658](https://github.com/YueMa0/r1212-1658), [doi:10.5281/zenodo.23827702](https://doi.org/10.5281/zenodo.23827702)) and the best bound published by others, R(12,12) ≥ 1641 (M. Tatarevic, [arXiv:2608.06531](https://arxiv.org/abs/2608.06531), August 2026). The literature search was last made on 12 November 2026. The result has not been peer reviewed.
 
 ## The result
 

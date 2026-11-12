@@ -1,9 +1,10 @@
 cff-version: 1.2.0
-message: "If you use this colouring, please cite it as below, together with Tatarevic's paper, r1212-1642 and r1212-1658."
+message: "If you use this colouring, please cite the paper R(12,12) ≥ 1661 by extending the Mathon–Shearer coloring (Hexagon preprint hexagon:2611.00248), together with Tatarevic's paper, r1212-1642 and r1212-1658. To cite the colouring, the programs or the Lean proof themselves, cite this repository by its Zenodo DOI."
 title: "R(12,12) ≥ 1661: a colouring of K_1660, a Lean proof and computer checks"
 authors:
   - family-names: Ma
     given-names: Yue
+    orcid: "https://orcid.org/0009-0000-7593-8958"
 version: 1.0.1
 date-released: "2026-11-09"
 doi: 10.5281/zenodo.23963534
@@ -24,6 +25,18 @@ keywords:
   - Ramsey numbers
   - lower bounds
   - Lean
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Ma
+      given-names: Yue
+      orcid: "https://orcid.org/0009-0000-7593-8958"
+  title: "R(12,12) ≥ 1661 by extending the Mathon–Shearer coloring"
+  journal: "Hexagon preprint hexagon:2611.00248"
+  status: preprint
+  year: 2026
+  month: 11
+  url: "https://hexagonmath.org/2611.00248"
 references:
   - type: article
     authors:

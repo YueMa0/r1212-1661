@@ -1,1 +1,3 @@
 /.lake/
+# output of Export1661.lean, and the copy of its recorded rows that compare_export_1661.py reads (audit/README.md)
+/build/
